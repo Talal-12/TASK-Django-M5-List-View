@@ -1,6 +1,6 @@
 from .models import Booking, Flight
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .serializers import FlightListSerializer, BookingListSerializer, BookingDetailSerializer
+from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView
+from .serializers import FlightListSerializer, BookingListSerializer, BookingDetailSerializer, BookingUpdateSerializer
 from django.utils import timezone
 
 
@@ -17,5 +17,12 @@ class BookingListView(ListAPIView):
 class BookingDetailView(RetrieveAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingDetailSerializer
+    lookup_field = "id"
+    lookup_url_kwarg = "article_id"
+
+
+class BookingUpdateView(UpdateAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingUpdateSerializer
     lookup_field = "id"
     lookup_url_kwarg = "article_id"
