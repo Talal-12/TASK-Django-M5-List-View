@@ -18,18 +18,18 @@ class BookingDetailView(RetrieveAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingDetailSerializer
     lookup_field = "id"
-    lookup_url_kwarg = "article_id"
+    lookup_url_kwarg = "booking_id"
 
 
 class BookingUpdateView(UpdateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingUpdateSerializer
     lookup_field = "id"
-    lookup_url_kwarg = "article_id"
+    lookup_url_kwarg = "booking_id"
 
 
 class BookingDeleteView(DestroyAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingDetailSerializer
     lookup_field = "id"
-    lookup_url_kwarg = "article_id"
+    lookup_url_kwarg = "booking_id"
