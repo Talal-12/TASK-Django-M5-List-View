@@ -18,6 +18,8 @@ from django.urls import path
 
 from flights.views import FlightListView, BookingListView, BookingDetailView, BookingUpdateView, BookingDeleteView
 
+from users.views import RegisterView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("flights/", FlightListView.as_view(), name="flights_list"),
@@ -28,4 +30,5 @@ urlpatterns = [
          BookingUpdateView.as_view(), name="bookings_update"),
     path("bookings/<int:booking_id>/cancel/",
          BookingDeleteView.as_view(), name="bookings_cancel"),
+    path("register/", RegisterView.as_view(), name="register"),
 ]
