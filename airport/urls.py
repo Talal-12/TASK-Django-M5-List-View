@@ -22,10 +22,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("flights/", FlightListView.as_view(), name="flights_list"),
     path("bookings/", BookingListView.as_view(), name="bookings_list"),
-    path("bookings/<int:booking_id>",
+    path("bookings/<int:booking_id>/",
          BookingDetailView.as_view(), name="bookings_detail"),
-    path("bookings/update/<int:booking_id>",
+    path("bookings/<int:booking_id>/update/",
          BookingUpdateView.as_view(), name="bookings_update"),
-    path("bookings/cancel/<int:booking_id>",
+    path("bookings/<int:booking_id>/cancel/",
          BookingDeleteView.as_view(), name="bookings_cancel"),
 ]
