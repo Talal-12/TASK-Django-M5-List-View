@@ -18,7 +18,7 @@ from django.urls import path
 
 from flights.views import FlightListView, BookingListView, BookingDetailView, BookingUpdateView, BookingDeleteView
 
-from users.views import RegisterView
+from users.views import RegisterView, LoginView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,9 +26,10 @@ urlpatterns = [
     path("bookings/", BookingListView.as_view(), name="bookings_list"),
     path("bookings/<int:booking_id>/",
          BookingDetailView.as_view(), name="bookings_detail"),
-    path("bookings/<int:booking_id>/update/",
+    path("bookings/update/<int:booking_id>/",
          BookingUpdateView.as_view(), name="bookings_update"),
-    path("bookings/<int:booking_id>/cancel/",
+    path("bookings/cancel/<int:booking_id>/",
          BookingDeleteView.as_view(), name="bookings_cancel"),
     path("register/", RegisterView.as_view(), name="register"),
+    path("login/", LoginView.as_view(), name="login"),
 ]
