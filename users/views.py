@@ -13,7 +13,7 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
 
 
-class LoginAPIView(APIView):
+class LoginView(APIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
